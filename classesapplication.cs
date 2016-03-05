@@ -49,11 +49,18 @@ public class ClassesAplication
       return numOfAnimals;
     }
 
-
+    //object method that we can access as example dog.toString() it will take the dogs information and display it when we call it. (the mothod is excecuted!)
     public string toString(){
       return String.Format("{0} is {1} inches tall, weights {2} pounds and likes to say {3}", name, height, weight,sound);
     }
 
+    //method overloading. work with different attribute types but also use the same method name. It will be able to accep integers or double variable types under the same mothod's name.
+    public int getSum(int num1 = 0, int num2 = 0){
+      return num1 + num2;
+    }
+    public double getSum(double num1 = 0, double num2 = 0){
+      return num1 + num2;
+    }
 
 
     static public void Main ()
@@ -86,9 +93,18 @@ public class ClassesAplication
 
       Console.WriteLine("Info about your animal" + newAnimal.toString());
 
+      //calling overloading methods
+      Console.WriteLine("Integers Sum: " + newAnimal.getSum(1,1));
+      Console.WriteLine("Integers Sum: " + newAnimal.getSum(1.1,1.1));
 
+      Animal cat = new Animal{
+        name = "cat",
+        height = 21,
+        weight = 322,
+        sound = "GRGRGRGRGRRRRRRR!!!!!!"
+      };
 
-
+      Console.WriteLine("cdhcbdsjkcd" + cat.toString());
 
     }
   }
