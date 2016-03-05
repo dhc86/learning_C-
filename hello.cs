@@ -152,41 +152,62 @@ public class HelloWorld
     // }
 
 
-    // list ----------------------------------------
+    // // list ----------------------------------------
 
-    // create list with type of data
+    // // create list with type of data
+    // // List<int> numList = new List<int>(5);
     // List<int> numList = new List<int>(5);
-    List<int> numList = new List<int>(5);
 
-    // add items to list
-    numList.Add(5);
+    // // add items to list
+    // numList.Add(5);
 
-    // add array to list
-    int[] array4 = {10,12,13,44};
-    numList.AddRange(array4);
+    // // add array to list
+    // int[] array4 = {10,12,13,44};
+    // numList.AddRange(array4);
 
-    // numList.Clear();
+    // // numList.Clear();
 
-    // copy an array into a list
-    List<int> numList2 = new List<int>(array4);
+    // // copy an array into a list
+    // List<int> numList2 = new List<int>(array4);
 
-    for (var i = 0; i < numList2.Count; i++){
-      Console.WriteLine("{0} : {1}", i, numList2[i]);
+    // for (var i = 0; i < numList2.Count; i++){
+    //   Console.WriteLine("{0} : {1}", i, numList2[i]);
+    // }
+
+    // //note when creating a list or array need to declare it and call new and declar it again. 
+    // List<string> stringList = new List<string>(new string[] {"diego", "herrera", "ceron"});
+
+    // for (var i = 0; i < stringList.Count; i++){
+    //   Console.WriteLine(" {0} : {1}", i, stringList[i]);
+    // }
+
+    // //you can sort them out!
+    // stringList.Sort();
+    // for (var i = 0; i < stringList.Count; i++){
+    //   Console.WriteLine(" {0} : {1}", i, stringList[i]);
+    // }
+
+    // Exceptions ----------------------------------------
+
+    try{
+      Console.Write("Divide 10 by :");
+      int number = int.Parse(Console.ReadLine());
+      Console.WriteLine("10/{0} = {1}", number, (10/number));
+
     }
-
-    //note when creating a list or array need to declare it and call new and declar it again. 
-    List<string> stringList = new List<string>(new string[] {"diego", "herrera", "ceron"});
-
-    for (var i = 0; i < stringList.Count; i++){
-      Console.WriteLine(" {0} : {1}", i, stringList[i]);
+    catch(DivideByZeroException ex) {
+      //this will give me the type of the exception
+      Console.WriteLine(ex.GetType().Name); 
+      Console.WriteLine("Diego message from DivideByZeroException: Can not divide by zero");
+      throw ex;
     }
+    //or you can use a generic
+    catch(Exception ex){
+      //this will give me the type of the exception
+      Console.WriteLine(ex.GetType().Name); 
+      Console.WriteLine("Diego message from expection: Can not divide by zero");
 
-    //you can sort them out!
-    stringList.Sort();
-    for (var i = 0; i < stringList.Count; i++){
-      Console.WriteLine(" {0} : {1}", i, stringList[i]);
     }
-
 
 
   }
