@@ -187,28 +187,30 @@ public class HelloWorld
     //   Console.WriteLine(" {0} : {1}", i, stringList[i]);
     // }
 
-    // Exceptions ----------------------------------------
+    // // Exceptions ----------------------------------------
 
-    try{
-      Console.Write("Divide 10 by :");
-      int number = int.Parse(Console.ReadLine());
-      Console.WriteLine("10/{0} = {1}", number, (10/number));
+    // try{
+    //   Console.Write("Divide 10 by :");
+    //   int number = int.Parse(Console.ReadLine());
+    //   Console.WriteLine("10/{0} = {1}", number, (10/number));
 
-    }
-    catch(DivideByZeroException ex) {
-      //this will give me the type of the exception
-      Console.WriteLine(ex.GetType().Name); 
-      Console.WriteLine("Diego message from DivideByZeroException: Can not divide by zero");
-      throw ex;
-    }
-    //or you can use a generic
-    catch(Exception ex){
-      //this will give me the type of the exception
-      Console.WriteLine(ex.GetType().Name); 
-      Console.WriteLine("Diego message from expection: Can not divide by zero");
+    // }
+    // catch(DivideByZeroException ex) {
+    //   //this will give me the type of the exception
+    //   Console.WriteLine(ex.GetType().Name); 
+    //   Console.WriteLine("Diego message from DivideByZeroException: Can not divide by zero");
+    //   throw ex;
+    // }
+    // //or you can use a generic
+    // catch(Exception ex){
+    //   //this will give me the type of the exception
+    //   Console.WriteLine(ex.GetType().Name); 
+    //   Console.WriteLine("Diego message from expection: Can not divide by zero");
+    // }
 
-    }
 
+    // Classes and Objects 
+    // class ins ablue print to define the capabilities and attributes of an object. please check classesapplication file
 
   }
 }
