@@ -47,38 +47,69 @@ public class HelloWorld
     // Random rand = new Random();
     // Console.WriteLine("random number between 1 to 10 = " + rand.Next(1,11)); 
 
-    //conditions 
+    // //conditions 
 
-    Console.WriteLine("Please enter your age again! : ");
-    var age_string = Console.ReadLine();
-    int age = Int32.Parse(age_string);
-    if (age < 30){
-      Console.WriteLine("Good age!, age = " + age);
+    // Console.WriteLine("Please enter your age again! : ");
+    // var age_string = Console.ReadLine();
+    // int age = Int32.Parse(age_string);
+    // if (age < 30){
+    //   Console.WriteLine("Good age!, age = " + age);
+    // }
+    // else if (age == 30){
+    //   Console.WriteLine("This is your actual age!");
+    // }
+    // else{
+    //   Console.WriteLine("What is wrong with you!");
+    // }
+
+
+    // Console.WriteLine("What is todys day of the week?");
+    // var day = Console.ReadLine().ToLower();
+    // switch (day){
+    //   case "monday":
+    //     Console.WriteLine("Monday time to go to work!");
+    //     break;
+
+    //   case "friday":
+    //     Console.WriteLine("Friday time to party!");
+    //     break;
+
+    //   default:
+    //     Console.WriteLine("plan your weekend nowwwwww.");
+    //     break;
+    // }
+
+
+
+    // looping 
+    int a = 0;
+    while( a < 10){
+      Console.WriteLine(a);
+      if (a == 7){
+        Console.WriteLine("a is seven!");
+      }
+      a++;
     }
-    else if (age == 30){
-      Console.WriteLine("This is your actual age!");
-    }
-    else{
-      Console.WriteLine("What is wrong with you!");
-    }
 
+    Random rand = new Random();
+    string guess;
+    int number;
+    do{
+      Console.WriteLine("Guess a number between 1 to 5 : ");
+      guess = Console.ReadLine();
+      number = Int32.Parse(guess);
+    } while (! number.Equals(rand.Next(1,6)));
 
-    Console.WriteLine("What is todys day of the week?");
-    var day = Console.ReadLine().ToLower();
-    switch (day){
-      case "monday":
-        Console.WriteLine("Monday time to go to work!");
-        break;
-
-      case "friday":
-        Console.WriteLine("Friday time to party!");
-        break;
-
-      default:
-        Console.WriteLine("plan your weekend nowwwwww.");
-        break;
+    for (int i= 0; i <= 10 ; i++){
+      Console.WriteLine(i);
     }
 
+    Console.WriteLine("Enter your name to iterate through: ");
+    string name = Console.ReadLine();
+
+    foreach (char i in name){
+      Console.WriteLine(i);
+    }
 
 
 
