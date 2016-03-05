@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
  
 public class HelloWorld
 {
@@ -128,28 +129,63 @@ public class HelloWorld
 
     // // Arrays ----------------------------------------
 
-    // declare array
-    int[] array1;
+    // // declare array
+    // int[] array1;
 
-    // declare array with number of items in it (3 items in this case)
-    int[] array2 = new int[3];
-    //declare and initialize an array
-    int[] array3 = {1,2,3,45};
+    // // declare array with number of items in it (3 items in this case)
+    // int[] array2 = new int[3];
+    // //declare and initialize an array
+    // int[] array3 = {1,2,3,45};
 
-    Console.WriteLine("array3 Length : ", array3.Length);
+    // Console.WriteLine("array3 Length : ", array3.Length);
 
-    for(int i = 0; i < array3.Length; i++ ){
-      // Console.WriteLine(array3[i]);
+    // for(int i = 0; i < array3.Length; i++ ){
+    //   // Console.WriteLine(array3[i]);
+    // }
+
+    // int[,] multiArray = {{2,3}, {4,5}, {5,2}};
+
+    // for (int x = 0; x < multiArray.GetLength(0); x++ ){
+    //   for (int y = 0; y < multiArray.GetLength(1); y++ ){
+    //     Console.WriteLine("{0} | {1} : {2}", x, y, multiArray[x,y]);
+    //   }
+    // }
+
+
+    // list ----------------------------------------
+
+    // create list with type of data
+    // List<int> numList = new List<int>(5);
+    List<int> numList = new List<int>(5);
+
+    // add items to list
+    numList.Add(5);
+
+    // add array to list
+    int[] array4 = {10,12,13,44};
+    numList.AddRange(array4);
+
+    // numList.Clear();
+
+    // copy an array into a list
+    List<int> numList2 = new List<int>(array4);
+
+    for (var i = 0; i < numList2.Count; i++){
+      Console.WriteLine("{0} : {1}", i, numList2[i]);
     }
 
-    int[,] multiArray = {{2,3}, {4,5}, {5,2}};
+    //note when creating a list or array need to declare it and call new and declar it again. 
+    List<string> stringList = new List<string>(new string[] {"diego", "herrera", "ceron"});
 
-    for (int x = 0; x < multiArray.GetLength(0); x++ ){
-      for (int y = 0; y < multiArray.GetLength(1); y++ ){
-        Console.WriteLine("{0} | {1} : {2}", x, y, multiArray[x,y]);
-      }
+    for (var i = 0; i < stringList.Count; i++){
+      Console.WriteLine(" {0} : {1}", i, stringList[i]);
     }
 
+    //you can sort them out!
+    stringList.Sort();
+    for (var i = 0; i < stringList.Count; i++){
+      Console.WriteLine(" {0} : {1}", i, stringList[i]);
+    }
 
 
 
