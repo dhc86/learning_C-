@@ -109,15 +109,28 @@ public class ClassesAplication
       // Console.WriteLine("cdhcbdsjkcd" + cat.toString());
 
 
-      // ------------ CLass Dog -----------------------------------
-      //we can create a sub CLass of animal. Examples dog, cat, whale...
-      //this sub class is going to inherit all the methods and attributes that his parent class Animal has.
+      // // ------------ CLass Dog -----------------------------------
+      // //we can create a sub CLass of animal. Examples dog, cat, whale...
+      // //this sub class is going to inherit all the methods and attributes that his parent class Animal has.
 
-      Dog irishSetter = new Dog();
-      Console.WriteLine("info about my new dog " + irishSetter.toString());      
-      irishSetter = new Dog(2, 200, "Lucas", "rouf-rouf", "pizza");
-      Console.WriteLine("info about my new dog" + irishSetter.toString());      
+      // Dog irishSetter = new Dog();
+      // Console.WriteLine("info about my new dog " + irishSetter.toString());      
+      // irishSetter = new Dog(2, 200, "Lucas", "rouf-rouf", "pizza");
+      // Console.WriteLine("info about my new dog" + irishSetter.toString());      
 
+      // -------------- generics - GEneric Class ---------------------
+      KeyValue<string, string> superman = new KeyValue<string,string>("","");
+
+      superman.key = "Superman";
+      superman.value = "Clark Kent";
+
+      KeyValue<int, string> samsungtv = new KeyValue<int, string>(0,"");
+
+      samsungtv.key = 100;
+      samsungtv.value = "Diego's 50' Samsung TV";
+
+      superman.showData();
+      samsungtv.showData();
     }
   }
 
@@ -142,7 +155,24 @@ public class ClassesAplication
     }
 
   }
+  // Generics - Generic Class (no need to specify the datatype of an elelment in a class or method.)
 
+  class KeyValue<Tkey, TValue>{
+    public Tkey key {get; set;}
+    public TValue value {get; set;}
+
+    // constructor
+    public KeyValue(Tkey k, TValue v ){
+      key = k;
+      value = v;
+    }
+
+    public void showData(){
+      Console.WriteLine("{0} is {1}", this.key, this.value);
+    }
+
+
+  }
 }
 
 
