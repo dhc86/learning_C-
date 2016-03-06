@@ -27,8 +27,8 @@ public class ClassesAplication
     public Animal(){
       this.height = 0;
       this.weight = 0;
-      this.name = "No name";
-      this.sound = "No sound";
+      this.name = "<No name yet>";
+      this.sound = "<No sound yet>";
       numOfAnimals++;
     }
 
@@ -66,48 +66,83 @@ public class ClassesAplication
     static public void Main ()
     {
 
+      // ------------CLass Animal -----------------------------------
       //create new animal!
-      Animal perro = new Animal(2, 200, "perro", "rouf-rouf");
-      Console.WriteLine("{0} says {1}", perro.name, perro.sound);
+      // Animal perro = new Animal(2, 200, "perro", "rouf-rouf");
+      // Console.WriteLine("{0} says {1}", perro.name, perro.sound);
 
-      Console.WriteLine("Please enter the following information to create your own pet or Animal!");
-      Console.Write("Name = ");
-      var name = Console.ReadLine();
+      // Console.WriteLine("Please enter the following information to create your own pet or Animal!");
+      // Console.Write("Name = ");
+      // var name = Console.ReadLine();
 
-      Console.Write("Animal height = ");
-      int height = int.Parse(Console.ReadLine());
+      // Console.Write("Animal height = ");
+      // int height = int.Parse(Console.ReadLine());
       
-      Console.Write("Animal weight = ");
-      int weight = int.Parse(Console.ReadLine());
+      // Console.Write("Animal weight = ");
+      // int weight = int.Parse(Console.ReadLine());
 
-      Console.Write("Animal sound = ");
-      var sound = Console.ReadLine();
+      // Console.Write("Animal sound = ");
+      // var sound = Console.ReadLine();
 
-      Animal newAnimal = new Animal(height,weight,name, sound);
-      Console.WriteLine("{0} says {1}", newAnimal.name, newAnimal.sound);    
+      // Animal newAnimal = new Animal(height,weight,name, sound);
+      // Console.WriteLine("{0} says {1}", newAnimal.name, newAnimal.sound);    
 
-      //you can call the static method to know how many animal were created
-      Console.WriteLine("Number of animals created is: "+ Animal.getNumOfAnimals());
+      // //you can call the static method to know how many animal were created
+      // Console.WriteLine("Number of animals created is: "+ Animal.getNumOfAnimals());
 
-      Console.WriteLine("Info about your animal" + perro.toString());
+      // Console.WriteLine("Info about your animal" + perro.toString());
 
-      Console.WriteLine("Info about your animal" + newAnimal.toString());
+      // Console.WriteLine("Info about your animal" + newAnimal.toString());
 
-      //calling overloading methods
-      Console.WriteLine("Integers Sum: " + newAnimal.getSum(1,1));
-      Console.WriteLine("Integers Sum: " + newAnimal.getSum(1.1,1.1));
+      // //calling overloading methods
+      // Console.WriteLine("Integers Sum: " + newAnimal.getSum(1,1));
+      // Console.WriteLine("Integers Sum: " + newAnimal.getSum(1.1,1.1));
 
-      Animal cat = new Animal{
-        name = "cat",
-        height = 21,
-        weight = 322,
-        sound = "GRGRGRGRGRRRRRRR!!!!!!"
-      };
+      // //creating a new animal
+      // Animal cat = new Animal{
+      //   name = "cat",
+      //   height = 21,
+      //   weight = 322,
+      //   sound = "GRGRGRGRGRRRRRRR!!!!!!"
+      // };
 
-      Console.WriteLine("cdhcbdsjkcd" + cat.toString());
+      // Console.WriteLine("cdhcbdsjkcd" + cat.toString());
+
+
+      // ------------ CLass Dog -----------------------------------
+      //we can create a sub CLass of animal. Examples dog, cat, whale...
+      //this sub class is going to inherit all the methods and attributes that his parent class Animal has.
+
+      Dog irishSetter = new Dog();
+      Console.WriteLine("info about my new dog " + irishSetter.toString());      
+      irishSetter = new Dog(2, 200, "Lucas", "rouf-rouf", "pizza");
+      Console.WriteLine("info about my new dog" + irishSetter.toString());      
 
     }
   }
+
+  class Dog : Animal {
+    // we can add dogs own attributes that only dogs can have
+    public string favFood{ get; set; }
+
+    //create a custom constructor set favFood
+    //note we can call the super class with :base() --> to get all initializations in super class. 
+    public Dog():base(){
+      this.favFood = "<No favourite yet>";
+    }
+
+    //we can create a more elavorate constructor for Dog taking in considerations Animal class
+    public Dog(double height, double weight, string name, string sound, string favFood):base(height, weight, name, sound){
+      this.favFood = favFood; 
+    }
+
+    // overwrite methods from a parent Class. To over write we have to type new at the beginning of method
+    new public string toString(){
+      return String.Format("{0} is {1} inches tall, weights {2} pounds and likes to say {3} and favourite food is {4}", name, height, weight,sound, favFood);
+    }
+
+  }
+
 }
 
 
